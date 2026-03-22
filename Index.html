@@ -1,0 +1,101 @@
+<!-- Criado por Marise Miranda | 2017.1 -->
+<!-- Adaptado por Matheus Matos | 2025.1 -->
+<!-- Lobotomizado por Vinicius Oliveira — 2026.3-->
+
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index's Machine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body bgcolor="#000000">
+<audio id="index" src="index_message_1.wav"></audio>
+<audio id="saikai" src="SAIKAIInstrumental.mp3""></audio>
+<video id="videoEasterEgg" style="
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+display: none;
+z-index: 9999;
+background: black;
+" >
+  <source src="arayashiki.mp4" type="video/mp4">
+</video>
+
+    <center>
+        <img src="index_new.png" alt="">
+        <h1>Index machine</h1>
+
+        <h3>Digite um número decimal:</h3>
+        <input id="demo1" type="text" placeholder="Ex: 42">
+        <br><br>
+
+        <button onclick="converter(); tocarSom(); saikai()">Revelar</button>
+
+        <h3>Resultados:</h3>
+        <p>Octal:
+        <div id="demo2"></div>
+        </p>
+        <p>Hexadecimal:
+        <div id="demo3"></div>
+        </p>
+        <p>Binário:
+        <div id="demo4"></div>
+        </p>
+    </center>
+
+    <script>
+
+
+function converter() {
+    var valor = demo1.value
+
+
+    if (valor.toLowerCase() === "araya") {
+        let video = document.getElementById("videoEasterEgg")
+        let musica = document.getElementById("saikai")
+
+        musica.pause(); 
+        video.style.display = "block"
+        video.play();
+
+ 
+        video.onended = function () {
+            video.style.display = "none"
+            musica.play(); 
+        };
+
+        return;
+    }
+
+
+    var decimal = Number(valor);
+
+    demo2.innerHTML = decimal.toString(8)
+    demo3.innerHTML = decimal.toString(16)
+    demo4.innerHTML = decimal.toString(2)
+}
+
+let s = 0
+function saikai() {
+    if (s !== 1){
+ let som = document.getElementById("saikai")
+    som.play()
+    s ++
+}}
+
+function tocarSom() {
+    let som = document.getElementById("index")
+    som.currentTime = 0
+    som.play()
+}
+    </script>
+</body>
+
+</html>

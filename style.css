@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'Index-Prescript-Library-Of-Ruina' ;
+    src: url('pixelmplus12-regular-webfont.woff2')format('woff2');
+}
+
+html, body {
+  font-family: 'Index-Prescript-Library-Of-Ruina', monospace;
+   color: #cfe9ff;
+   text-shadow: 
+  0 0 6px #66ccff,
+  0 0 12px #33bbff,
+  0 0 20px #00aaff;
+}
+
+input {
+  background: #0f172a;
+  border: 1px solid #66ccff;
+  color: #cfe9ff;
+  padding: 10px;
+  border-radius: 6px;
+  outline: none;
+  font-family: inherit;
+
+  box-shadow: 0 0 6px #66ccff33;
+}
+
+button {
+  background: transparent;
+  border: 1px solid #66ccff;
+  color: #cfe9ff;
+  padding: 10px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: #66ccff;
+  color: #0a0f1a;
+
+  box-shadow: 
+    0 0 8px #66ccff,
+    0 0 16px #66ccff;
+}
